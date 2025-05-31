@@ -1,0 +1,19 @@
+.lastUpdated {
+	font-style: italic;
+}
+
+.recentPosts {
+	border: 1px solid;
+	padding: 1rem;
+}
+
+.recentPosts-header {
+	margin: 0;
+}
+
+footer {
+	margin-top: 2rem;
+	display: inline-block;
+	border-top: 1px solid;
+	font-size: .8rem;
+}

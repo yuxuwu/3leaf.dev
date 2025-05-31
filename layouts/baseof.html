@@ -1,0 +1,22 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	{{ $style := resources.Get "css/style.css" | minify | fingerprint }}
+	<link rel="stylesheet" href="{{ $style.RelPermalink}}">
+ 	<title>
+		{{block "title" .}}{{end}}
+	</title>
+</head>
+
+<body>
+	{{block "main" .}}
+	{{end}}
+	
+	<br>
+	<footer>
+		{{partial "footer" .}}
+	</footer>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+{{ define "title" }}
+	{{.Title}}
+{{ end }}
+
+{{ define "main" }}
+	<a href="{{relURL "/"}}">← Back to Home</a>
+	
+	<article>
+		{{.Content}}
+	</article>
+	
+	<a href="{{relURL "/"}}">← Back to Home</a>
+{{end}}

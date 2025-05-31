@@ -1,0 +1,27 @@
+{{ define "title" }}
+	3-Leaf Clover | Home
+{{ end }}
+
+{{ define "main" }}
+	{{ with site.GetPage "home_blurb" }}
+		{{.Content}}
+		<p class="lastUpdated">
+			Last updated on: {{.Date.Format "3:04pm, Monday, Jan 06 2006"}}
+		</p>
+	{{ end }}
+	
+	<div class="recentPosts">
+		<h2 class="recentPosts-header"> Recent Posts </h2>
+		{{ $recentPosts := where .Site.RegularPages "Section" "posts" }}
+		{{if ne (len $recentPosts) 0 }}
+			<ul>
+			{{ range $recentPosts }}
+				<li><h4><a href="{{.RelPermalink}}">{{.Title}}</a></h4></li>
+			{{ end }}
+			</ul>
+		{{else}}
+			There don't seem to be any posts yet!
+		{{ end }}
+	</div>
+	
+{{ end }}
